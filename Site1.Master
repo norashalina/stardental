@@ -1,0 +1,438 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="STAR.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>STAR DENTAL</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+     <!-- Favicons -->
+    <link href="assets/img/teeth.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <%--    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />--%>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="bootstrap/css/style3.css" rel="stylesheet" />
+    <link href="bootstrap/css/Style2.css" rel="stylesheet" />
+    <link href="bootstrap/css/dashboard.css" rel="stylesheet" />
+    <link href="bootstrap/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="font/css/all.min.css" rel="stylesheet" />
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="dashboard/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="dashboard/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="dashboard/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="dashboard/plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dashboard/dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="dashboard/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="dashboard/plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="dashboard/plugins/summernote/summernote-bs4.min.css">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style type="text/css">
+        @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+        }
+        @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+
+        .fa-2x {
+            font-size: 2em;
+        }
+
+        .fa {
+            position: relative;
+            display: table-cell;
+            width: 60px;
+            height: 36px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 20px;
+        }
+
+
+        .main-menu:hover, nav.main-menu.expanded {
+            width: 250px;
+            overflow: visible;
+        }
+
+        .main-menu {
+            background: #212121;
+            border-right: 1px solid #e5e5e5;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            left: 0;
+            width: 60px;
+            overflow: hidden;
+            -webkit-transition: width .05s linear;
+            transition: width .05s linear;
+            -webkit-transform: translateZ(0) scale(1,1);
+            z-index: 1000;
+        }
+
+            .main-menu > ul {
+                margin: 7px 0;
+            }
+
+            .main-menu li {
+                position: relative;
+                display: block;
+                width: 250px;
+            }
+
+                .main-menu li > a {
+                    position: relative;
+                    display: table;
+                    border-collapse: collapse;
+                    border-spacing: 0;
+                    color: #999;
+                    font-family: arial;
+                    font-size: 14px;
+                    text-decoration: none;
+                    -webkit-transform: translateZ(0) scale(1,1);
+                    -webkit-transition: all .1s linear;
+                    transition: all .1s linear;
+                }
+
+            .main-menu .nav-icon {
+                position: relative;
+                display: table-cell;
+                width: 60px;
+                height: 36px;
+                text-align: center;
+                vertical-align: middle;
+                font-size: 18px;
+            }
+
+            .main-menu .nav-text {
+                position: relative;
+                display: table-cell;
+                vertical-align: middle;
+                width: 190px;
+                font-family: 'Titillium Web', sans-serif;
+            }
+
+            .main-menu > ul.logout {
+                position: absolute;
+                left: 0;
+                bottom: 30px;
+            }
+
+        .no-touch .scrollable.hover {
+            overflow-y: hidden;
+        }
+
+            .no-touch .scrollable.hover:hover {
+                overflow-y: auto;
+                overflow: visible;
+            }
+
+        a:hover, a:focus {
+            text-decoration: none;
+        }
+
+        nav {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            /*-o-user-select: none;*/
+            user-select: none;
+        }
+
+            nav ul, nav li {
+                outline: 0;
+                margin: 0;
+                padding: 0;
+            }
+
+            .main-menu li:hover > a, nav.main-menu li.active > a, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .no-touch .dashboard-page nav.dashboard-menu ul li:hover a, .dashboard-page nav.dashboard-menu ul li.active a {
+                color: #fff;
+                background-color: #5fa2db;
+            }
+
+        .area {
+            float: left;
+            background: #e2e2e2;
+            width: 100%;
+            height: 100%;
+        }
+
+        @font-face {
+            font-family: 'Titillium Web';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
+        }
+
+        .nav-link[data-toggle="collapse"]{
+            position: relative;
+        }
+
+        .dropdown-menu {
+            white-space: nowrap;
+            position: relative;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            border-radius: 0;
+            border: none;
+            background-color: #222;
+            box-shadow: none;
+        }
+        .nav-link[data-toggle].collapsed:after {
+            content: " ▾";
+        }
+
+        .nav-link[data-toggle]:not(.collapsed):after {
+            content: " ▴";
+        }
+    </style>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+
+        <!-- Navbar -->
+        <%--<nav class="main-header navbar navbar-expand" style="right:0">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    Logged in as:
+                            <asp:Label ID="label" Text="label:" runat="server" />
+                </li>
+            </ul>
+        </nav>--%>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+
+        <aside class="main-menu sidebar-dark-primary elevation-4">
+
+
+
+            <nav class="main-menu">
+                <a href="Dashboard-EC.aspx" class="brand-link">
+                    <span class="brand-text font-weight-light">STAR</span>
+                </a>
+
+                <ul>
+                    <%--<li>
+                        <a href="Dashboard.aspx" runat="server" id="Dashboard">
+                            <i class="fa fa-home fa-2x"></i>
+                            <span class="nav-text">Dashboard
+                            </span>
+                        </a>
+
+                    </li>--%>
+
+                    <%--<li class="has-subnav">
+                        <a runat="server" id="CreateUser"  class="nav-link collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu1">
+                            <i class="fa fa-laptop fa-2x"></i>
+                            <span class="nav-text">User</span>
+                        </a>
+                         <div class="collapse" id="submenu1" aria-expanded="false">
+                            <ul class="d-flex flex-row-reverse p-2 nav">
+                                <li class="has-subnav"><a class="nav-link" runat="server" href="CreateUser.aspx"><i class="fa fa-user fa-2x"></i><span class="nav-text">Create User</span></a></li>
+                                <li class="has-subnav"><a class="nav-link" runat="server" href="NotificationRecipients.aspx"><i class="fa fa-bell fa-2x"></i><span class="nav-text">Notification Recipients</span></a></li>
+                            </ul>
+                        </div>
+                    </li>--%>
+
+                    <li class="has-subnav">
+                        <a href="AppointmentList.aspx" runat="server" class="nav-link" id="BookingReq">
+                            <i class="fa fa-folder-open fa-2x"></i>
+                            <span class="nav-text">Appointment Request
+                            </span>
+                        </a>
+
+                    </li>
+                    <li class="has-subnav">
+                        <a href="AppointmentUpdate.aspx" runat="server" class="nav-link" id="UserBooking">
+                            <i class="fa fa-folder-open fa-2x"></i>
+                            <span class="nav-text">Appointment List
+                            </span>
+                        </a>
+
+                    </li>
+                     <%-- <li class="has-subnav">
+                        <a href="PatientList.aspx" runat="server" class="nav-link" id="Patient">
+                            <i class="fa fa-pencil-square-o fa-2x"></i>
+                            <span class="nav-text">Patient List
+                            </span>
+                        </a>
+
+                    </li>--%>
+                    <%-- <li class="has-subnav">
+                        <a runat="server" id="A1"  class="nav-link collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu2">
+                            <i class="fa fa-pencil-square-o fa-2x"></i>
+                            <span class="nav-text">Update Card Type</span>
+                        </a>
+                         <div class="collapse" id="submenu2" aria-expanded="false">
+                            <ul class="d-flex flex-row-reverse p-2 nav">
+                                <li class="has-subnav"><a class="nav-link" runat="server" href="TriggerThreshold.aspx"><i class="fa fa-calendar fa-2x"></i><span class="nav-text">Trigger Threshold</span></a></li>
+                                <li class="has-subnav"><a class="nav-link" runat="server" href="SpecialRemark.aspx"><i class="fa fa-exclamation-circle fa-2x"></i><span class="nav-text">Special Remarks</span></a></li>
+                            </ul>
+                        </div>
+                    </li>--%>
+                </ul>
+                <ul class="logout">
+                    
+                    <li>
+                        <a href="logout.aspx" class="nav-link" id="logoutEC1" runat="server">
+                            <i class="fa fa-power-off fa-2x"></i>
+                            <span class="nav-text">Logout as <asp:Label ID="label" class="nav-text" Text="label:" runat="server" />
+                            </span>
+                        </a>
+                    </li> 
+                   
+                </ul>
+                 <%--<div class="user-panel d-flex">
+                <div class="info">
+                    <div class="d-block" style="color: gainsboro; padding: 0.75rem; flex-shrink: 0; bottom: 10px; position: fixed">
+                        Logged in as:
+                            <asp:Label ID="label" Text="label:" runat="server" />
+                    </div>
+
+                </div>
+            </div>--%>
+            </nav>
+            <!-- Sidebar -->
+            <%-- <div class="sidebar">--%>
+
+
+            <!-- Sidebar Menu -->
+            <%-- <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">--%>
+            <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+            <%--<li class="nav-item">
+                            <a href="Dashboard.aspx" runat="server" class="nav-link" id="Dashboard">
+                                <i class="nav-icon fa fa-home"></i>
+                                <p>
+                                    Dashboard
+             
+                                </p>
+                            </a>
+                        </li>--%>
+            <%--<li class="nav-item">
+                            <a href="CreateUser.aspx" class="nav-link" id="CreateUser" runat="server">
+                                <i class="nav-icon fa fa-keyboard"></i>
+                                <p>
+                                    Create User
+             
+                                </p>
+                            </a>
+                        </li>     --%>
+            <%-- <li class="nav-item">
+                            <a href="CreateCardType.aspx" runat="server" class="nav-link" id="CreateCard">
+                                <i class="nav-icon fa fa-folder-open  "></i>
+                                <p>
+                                    Create Card Type
+             
+                                </p>
+                            </a>
+                        </li> --%>
+            <%-- <li class="nav-item">
+                            <a href="CardType.aspx" runat="server" class="nav-link" id="Card">
+                                <i class="nav-icon fa fa-folder-open  "></i>
+                                <p>
+                                    Card Type Listing
+             
+                                </p>
+                            </a>
+                        </li>--%>
+            <%-- <li class="nav-item">
+                            <a href="logout.aspx" class="nav-link" id="logoutEC1" runat="server">
+                                <i class="nav-icon fa fa-lock"></i>
+                                <p>
+                                    Logout
+             
+                                </p>
+                            </a>
+                        </li>--%>
+            <%--</ul>--%>
+            <!-- Sidebar user panel (optional) -->
+
+            <%--</nav>--%>
+            <!-- /.sidebar-menu -->
+            <%--</div>--%>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+        <%--<main role="main" class="col-md-10 ml-sm-auto col-xl-9 pt-9 px-9">--%>
+        <%--<main role="main" class="col-md-10 ml-sm-auto col-lg-9 offset-md-1">
+                  
+               <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            
+        </main>--%>
+        <div class="content-wrapper">
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="bootstrap/js/script3.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <!-- jQuery -->
+    <script src="dashboard/plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="dashboard/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="dashboard/plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="dashboard/plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="dashboard/plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="dashboard/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="dashboard/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="dashboard/plugins/moment/moment.min.js"></script>
+    <script src="dashboard/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="dashboard/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="dashboard/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="dashboard/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dashboard/dist/js/adminlte.js"></script>
+</body>
+</html>
